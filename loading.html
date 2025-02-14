@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<script>
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 1000);  // 3000 milliseconds = 3 seconds
+</script>
+<body class="flex items-center justify-center min-h-screen bg-red-50">
+
+    <div class="flex space-x-3">
+        <div class="w-4 h-4 bg-pink-200 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+        <div class="w-4 h-4 bg-pink-200 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+        <div class="w-4 h-4 bg-pink-200 rounded-full animate-bounce" style="animation-delay: 0.4s;"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+            overflow: hidden;
+        }
+        .floating-heart {
+            animation: float 4s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <!-- Card Container -->
+    <div class="bg-white p-6 rounded-3xl shadow-2xl text-center max-w-md">
+        <h1 class="text-4xl font-bold text-pink-600">Will you be my Valentine? ❤️</h1>
+        
+        <!-- Image Section -->
+        <div class="mt-4 mb-6">
+            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-pink-300">
+                <img src="./images/8ff7d4f2628a34e46533a2ab1c4b298b.jpg" alt="Couple" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Button -->
+        <button class="px-6 py-2 text-white bg-pink-500 rounded-full shadow-md hover:bg-pink-600 transform hover:scale-105 transition-transform duration-300 ease-out">
+            <a href="./final.html">Yes 💖</a>
+            
+        </button>
+        <button class="px-6 py-2 text-white bg-pink-500 rounded-full shadow-md hover:bg-pink-600 transform hover:scale-105 transition-transform duration-300 ease-out">
+            <a href="./jo.html">No</a>
+            
+        </button>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-heart absolute top-10 left-20 text-pink-300 text-6xl">
+        <img class="w-40 h-40" src="./images/valentine-day.png" alt="">
+    </div>
+    <div class="floating-heart absolute top-20 right-32 text-red-400 text-5xl">💖</div>
+    <div class="floating-heart absolute top-40 left-48 text-pink-400 text-4xl">💕</div>
+
+</body>
+</html>
