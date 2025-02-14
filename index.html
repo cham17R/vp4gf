@@ -6,106 +6,89 @@
     <title>Document</title>
     <link rel="stylesheet" href="./src/output.css" />
     <script>
-        function checkPassword() {
-            // Set your predetermined password here
-            const correctPassword = "mama4life";
+      document.addEventListener("DOMContentLoaded", function () {
+        // Focus on password field once the page is loaded
+        document.getElementById("password").focus();
 
-            // Get the value from the input field
-            const enteredPassword = document.getElementById("password").value;
-
-            // Check if the entered password is correct
-            if (enteredPassword === correctPassword) {
-                alert("Access Granted! Happy Valentine's Day! ❤️");
-                window.location.href = "io.html"; // Redirect to the next page
-            } else {
-                alert("Incorrect Password. Try Again!");
-            }
-        }
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("password").focus();
-        });
-    </script>
-    <script>
         // Prevent form submission to avoid page reload
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("loginForm").addEventListener("submit", function(event) {
-                event.preventDefault();
-                checkPassword();
-            });
-        });
-        
+        document
+          .getElementById("loginForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            checkPassword();
+          });
+      });
+
+      function checkPassword() {
+        // Set your predetermined password here
+        const correctPassword = "mama4life";
+
+        // Get the value from the input field
+        const enteredPassword = document.getElementById("password").value;
+
+        // Check if the entered password is correct
+        if (enteredPassword === correctPassword) {
+          alert("Access Granted! Happy Valentine's Day! ❤️");
+          window.location.href = "io.html"; // Redirect to the next page
+        } else {
+          alert("Incorrect Password. Try Again!");
+          document.getElementById("password").value = ""; // Clear the input
+          document.getElementById("password").focus(); // Refocus on the input
+        }
+      }
     </script>
   </head>
   <body class="bg-pink-50">
-    <header>
-      <script>
-        // Check if loading has been shown before
-        if (!sessionStorage.getItem("loadingShown")) {
-          // Redirect to loading page
-          sessionStorage.setItem("loadingShown", "true");
-          window.location.href = "loading.html";
-        }
-      </script>
-    </header>
-    <div class="">
-      <div class="flex items-center justify-center mt-20">
-        <div class="h-max max-w-sm p-6 bg-white rounded-lg shadow-md w-screen">
-          <h2 class="text-2xl font-bold text-center text-gray-700">Hehe!</h2>
-          <form class="mt-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-600"
-                >How wonderful life is, while your're in the world</label
-              >
-              <div class="w-full px-4 py-2 mt-4 text-white bg-pink-400 rounded-md hover:bg-pink-500">
-                
-                
-              </div>
-                
-              
-              
-            </div>
-            <div class="mt-4">
-              <label class="block text-sm font-medium text-gray-600"
-                >o_,< casts some spell on me</label
-              >
-              <input
-                type="password"
-                id="password"
-                placeholder="Whispers the magical words "
-                class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
-              />
-            </div>
-            <div class="flex items-center justify-between mt-4">
-              <label class="flex items-center">
-                <input type="checkbox" class="text-pink-300" />
-                <span class="ml-2 text-sm text-gray-600">Remember me</span>
-              </label>
-              <a href="#" class="text-sm text-pink-300 hover:underline"
-                >Don't u know u little gold fish?</a
-              >
-            </div>
-            <button
-              type="submit"
-              class="w-full px-4 py-2 mt-4 text-white bg-pink-400 rounded-md hover:bg-pink-500"
+    <header></header>
+    <div class="flex items-center justify-center mt-20">
+      <div class="h-max max-w-sm p-6 bg-white rounded-lg shadow-md w-screen">
+        <h2 class="text-2xl font-bold text-center text-gray-700">Hehe!</h2>
+        <!-- Added id="loginForm" -->
+        <form id="loginForm" class="mt-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-600"
+              >How wonderful life is, while you're in the world</label
             >
-              <a href="./io.html">Submit</a>
-            </button>
-          </form>
-          <p class="mt-4 text-sm text-center text-gray-600">
-            Don't have an account?
-            <a href="#" class="text-pink-500 hover:underline">Sign up</a>
-          </p>
-        </div>
-
-        <div class="sm:block hidden w-48 h-48 p-5 rounded-lg">
-          <img
-            class="w-full h-full rounded-lg object-cover"
-            src="./images/17fd15ab029147415a5b5dd570db6698.jpg"
-            alt=""
-          />
-        </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-gray-600"
+              >o_,< casts some spell on me</label
+            >
+            <input
+              type="password"
+              id="password"
+              placeholder="Whispers the magical words"
+              class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-pink-400"
+            />
+          </div>
+          <div class="flex items-center justify-between mt-4">
+            <label class="flex items-center">
+              <input type="checkbox" class="text-pink-300" />
+              <span class="ml-2 text-sm text-gray-600">Remember me</span>
+            </label>
+            <a href="#" class="text-sm text-pink-300 hover:underline"
+              >Don't u know u little gold fish?</a
+            >
+          </div>
+          <!-- Removed <a> inside the button for proper form handling -->
+          <button
+            type="submit"
+            class="w-full px-4 py-2 mt-4 text-white bg-pink-400 rounded-md hover:bg-pink-500"
+          >
+            Submit
+          </button>
+        </form>
+        <p class="mt-4 text-sm text-center text-gray-600">
+          Don't have an account?
+          <a href="#" class="text-pink-500 hover:underline">Sign up</a>
+        </p>
+      </div>
+      <div class="sm:block hidden w-48 h-48 p-5 rounded-lg">
+        <img
+          class="w-full h-full rounded-lg object-cover"
+          src="./images/17fd15ab029147415a5b5dd570db6698.jpg"
+          alt=""
+        />
       </div>
     </div>
   </body>
